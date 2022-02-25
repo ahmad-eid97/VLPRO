@@ -1,0 +1,63 @@
+// IMPORTING GLOBAL VARIABLES AND MIXINS
+@import '../../assets/css/variables';
+@import '../../assets/css/mixins';
+
+.footer {
+  margin-top: 50px;
+  .inside {
+    .logo {
+      width: 50px;
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      ul {
+        display: flex;
+        list-style: none;
+        li {
+          margin: 0 10px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .icons {
+        svg {
+          margin: 0 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  @include xs {
+    .inside {
+      .logo {
+        width: 35px;
+      }
+      .top {
+        ul {
+          li {
+            font-size: 11px;
+            margin: 0 5px;
+          }
+        }
+      }
+      .bottom {
+        h4 {
+          font-size: 13px;
+        }
+        .icons {
+          svg {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

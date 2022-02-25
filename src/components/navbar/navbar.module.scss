@@ -1,0 +1,99 @@
+// IMPORTING GLOBALL VARIABLES AND MIXINS
+@import '../../assets/css/variables';
+@import '../../assets/css/mixins';
+
+.navbar {
+  .nav {
+    background-color: $bg-color;
+    padding: 10px 0;
+    box-shadow: none;
+    @mixin btn {
+      background-color: #112b50;
+      border: 2px solid $maincolor;
+      padding: 0 30px;
+      margin-left: 50px;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 0px;
+      overflow: hidden;
+      .insideButton {
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background: $main-bg-color;
+      }
+      .text {
+        position: relative;
+        z-index: 2;
+      }
+      &:hover {
+        .insideButton {
+          width: 100%;
+        }
+      }
+    }
+    .logoSide {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      .logo {
+        width: 45px;
+        margin-right: 10px;
+        @include xs {
+          width: 40px;
+        }
+      }
+    }
+    .deviceList {
+      display: flex;
+      .insideList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li, a {
+          font-weight: bold;
+          cursor: pointer;
+          font-size: 18px;
+          opacity: 0.8;
+          color: #fff;
+          text-decoration: none;
+          padding: 3px 10px;
+          &:hover {
+            color: $maincolor;
+          }
+        }
+      }
+      button {
+       @include btn;
+      }
+    }
+    .mobileList {
+      display: none;
+    }
+    @mixin same-xs-and-sm {
+      .deviceList {
+        display: none;
+      }
+      .mobileList {
+        display: block;
+        cursor: pointer;
+        svg {
+          background-color: $maincolor;
+          padding: 6px;
+          font-size: 28px;
+          border-radius: 5px;
+        }
+      }
+    }
+    @include sm {
+      @include same-xs-and-sm();
+    }
+    @include xs {
+      @include same-xs-and-sm();
+    }
+  }
+}

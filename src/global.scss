@@ -1,0 +1,110 @@
+// IMPORTING GLOBAL VARIABLES AND MIXINS
+@import './assets/css/variables';
+@import './assets/css/mixins';
+
+@font-face {
+  font-family: 'otline-font';
+  src: url('../src/assets/fonts/Milestone\ Outline.otf');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  background-color: $bg-color;
+  color: #fff;
+}
+
+.word {
+  font-size: 75px;
+  font-family: 'otline-font';
+  background: linear-gradient(to right, #0755f8, #01e8ba);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  padding-left: 5px;
+  font-weight: 400;
+  @include xs {
+    font-size: 40px;
+  }
+  @include sm {
+    font-size: 54px;
+  }
+  @include md {
+    font-size: 60px;
+  }
+}
+
+.smallWord {
+  font-size: 75px;
+  font-family: 'otline-font';
+  background: $small-bg-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  padding-left: 5px;
+  font-weight: 400;
+}
+
+.meduimWord {
+  font-size: 75px;
+  font-family: 'otline-font';
+  background: $meduim-bg-color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  padding-left: 5px;
+  font-weight: 400;
+  @include xs {
+    font-size: 50px;
+  }
+  &.meduimWord2 {
+    background: linear-gradient(to right, #0755f8 5%, #01e8ba 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.active {
+  color: $maincolor !important;
+}
+
+.menu {
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  div {
+    button {
+      background-color: #112b50;
+      border: 2px solid $maincolor;
+      padding: 10px 30px;
+      font-weight: bold;
+      font-size: 13px;
+      border-radius: 0px;
+      overflow: hidden;
+      color: #fff;
+      position: relative;
+      .insideButton {
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background: $main-bg-color;
+      }
+      .text {
+        position: relative;
+        z-index: 2;
+      }
+      &:hover {
+        .insideButton {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

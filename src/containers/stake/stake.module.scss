@@ -1,0 +1,122 @@
+// IMPORTING GLOBAL VARIABLES AND MIXINS
+@import '../../assets/css/variables';
+@import '../../assets/css/mixins';
+
+.stakerapper {
+  padding: 100px;
+  .single {
+    background: $main-bg-color;
+    padding: 8px 20px;
+    border-radius: 10px;
+    @include xs {
+      width: 300px;
+      margin: auto;
+    }
+    @media (min-width:600px) and (max-width:700px) {
+      width: 230px;
+    }
+  }
+  .tabs {
+    margin-top: 70px;
+    button {
+      color: #fff;
+      font-size: 20px;
+      text-transform: capitalize;
+      &.Mui-selected {
+        display: none !important;
+        background-color: #ccc !important;
+      }
+    }
+    .indicator {
+      background-color: $maincolor;
+    }
+    .insideStake {
+      h1 {
+        font-size: 65px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 25px;
+      }
+      h2.label {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 30px;
+        @include xs {
+          font-size: 20px;
+        }
+      }
+      .wide {
+        text-align: center;
+        .singleWide {
+          display: flex;
+          position: relative;
+          justify-content: center;
+          .circle {
+            margin: auto;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 7px solid $maincolor;
+            background-color: transparent;
+            position: relative;
+          }
+          .line {
+            border: 1px dashed $maincolor;
+            width: 95%;
+            top: 86%;
+            left: 52%;
+            position: absolute;
+            &.lineLast {
+              display: none;
+            }
+          }
+          @include xs {
+            h4 {
+              font-size: 14px;
+            }
+            .circle {
+              width: 5px;
+              height: 5px;
+            }
+            .lineMid {
+              display: none;
+            }
+          }
+        }
+      }
+      .points {
+        padding-top: 100px;
+        ul {
+          list-style: none;
+          padding: 0;
+          li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(41, 38, 66);
+            p {
+              margin-bottom: 7px;
+            }
+          }
+        }
+        p.lastText {
+          margin-top: 50px;
+        }
+      }
+      @include xs {
+        h1 {
+          font-size: 50px;
+        }
+        p {
+          font-size: 16px;
+        }
+        h2 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
